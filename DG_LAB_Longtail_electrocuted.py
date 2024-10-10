@@ -140,5 +140,5 @@ if __name__ == "__main__":
     longtail.ab_value_max = 15
     # 通道强度（高于最大时无效）
     longtail.a_value = 15
-    longtail.b_value = 18
+    longtail.b_value = 15
     main()
