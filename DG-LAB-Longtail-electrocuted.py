@@ -40,13 +40,13 @@ class DgLab:
             return
         print(f"Connected to {self.bt_address}")
 
-    async def send_data(self,channel, wave_scanner_a, wave_scanner_b):
+    async def send_data(self, channel, wave_scanner_a, wave_scanner_b):
         if not self.client or not self.client.is_connected:
             print("Client is not connected.")
             return
 
         if self.a_value > self.ab_value_max or self.b_value > self.ab_value_max:
-            print(f"无效值。a_value 和 b_value 值都应小于且不等于最大值： {self.ab_value_max + 1 } 。")
+            print(f"无效值。a_value 和 b_value 值都应小于且不等于最大值： {self.ab_value_max + 1} 。")
             pass
         else:
             for timer in range(1):
@@ -68,9 +68,11 @@ class DgLab:
                 else:
                     print("Invalid channel. Please select either A or B.")
                     pass
+
     async def run(self):
         await self.scan_devices()
         await self.connect_to_device()
+
 
 def send_pulse_params(x, y, z):
     # 确保x, y, z的范围合法
@@ -128,7 +130,6 @@ def main():
             running = False
         else:
             print("Invalid command.")
-
 
 
 if __name__ == "__main__":
