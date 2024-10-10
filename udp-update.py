@@ -23,6 +23,7 @@ def send_udp_message(message, data_tuple_a, data_tuple_b):
     # 关闭套接字
     sock.close()
 
+
 def create_wave_sequence(mode, sequence_a, sequence_b):
     max_length = max(len(sequence_a), len(sequence_b))
     for i in range(max_length):
@@ -31,9 +32,10 @@ def create_wave_sequence(mode, sequence_a, sequence_b):
         send_udp_message(mode, wave_a, wave_b)
         time.sleep(0.1)  # 每0.1秒发送一次
 
+
 if __name__ == '__main__':
     # 示例使用
-    modes = "on_b"  # 输入模式（on_a, on_b, on_all）
+    modes = "on_a"  # 输入模式（on_a, on_b, on_all, off）
 
     # 频谱以列表形式写出，上线分别为31，1023，31，具体信息看 v2 文档自行研究，列表禁止为 None，否则会报错，可以为（0，0，0）。
     wave_sequences_a = [
