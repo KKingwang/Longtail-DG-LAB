@@ -137,8 +137,8 @@ if __name__ == "__main__":
     longtail = DgLab("D-LAB ESTIM01")
     asyncio.run(longtail.run())
     # AB通道最大强度
-    longtail.ab_value_max = 15
+    longtail.ab_value_max = 25
     # 通道强度（高于最大时无效）
-    longtail.a_value = 15
-    longtail.b_value = 15
+    longtail.a_value = 20
+    longtail.b_value = 20
     main()
