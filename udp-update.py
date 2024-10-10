@@ -33,7 +33,7 @@ def create_wave_sequence(mode, sequence_a, sequence_b):
 
 if __name__ == '__main__':
     # 示例使用
-    modes = "on_a"  # 输入模式（on_a, on_b, on_all）
+    modes = "on_b"  # 输入模式（on_a, on_b, on_all）
 
     # 频谱以列表形式写出，上线分别为31，1023，31，具体信息看 v2 文档自行研究，列表禁止为 None，否则会报错，可以为（0，0，0）。
     wave_sequences_a = [

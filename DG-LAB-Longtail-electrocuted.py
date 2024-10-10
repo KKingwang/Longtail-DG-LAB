@@ -15,7 +15,8 @@ class DgLab:
         self.client = None
         self.a_value = None
         self.b_value = None
-        self.pulseFrequency=None
+        self.pulseFrequency = None
+        self.ab_value_max = None
 
     async def scan_devices(self):
         print("Start scanning:")
@@ -44,8 +45,8 @@ class DgLab:
             print("Client is not connected.")
             return
 
-        if self.a_value > 15 and self.b_value > 15:
-            print("Invalid values. Both A and B values should be less than 16.")
+        if self.a_value > self.ab_value_max or self.b_value > self.ab_value_max:
+            print(f"无效值。a_value 和 b_value 值都应小于且不等于最大值： {self.ab_value_max + 1 } 。")
             pass
         else:
             for timer in range(1):
@@ -134,7 +135,9 @@ if __name__ == "__main__":
     # 创建实例
     longtail = DgLab("D-LAB ESTIM01")
     asyncio.run(longtail.run())
-    # 通道强度（大于15无效）
-    longtail.a_value = 7
-    longtail.b_value = 7
+    # AB通道最大强度
+    longtail.ab_value_max = 15
+    # 通道强度（高于最大时无效）
+    longtail.a_value = 15
+    longtail.b_value = 18
     main()
