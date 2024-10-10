@@ -50,8 +50,8 @@ class DgLab:
             pass
         else:
             for timer in range(1):
-                a_value_new = self.a_value * 7
-                b_value_new = self.b_value * 7
+                a_value_new = self.a_value * 10
+                b_value_new = self.b_value * 10
                 combined_value = (b_value_new << 11) | a_value_new  # 构建24位数据：23-22位为0（保留），21-11位为B通道强度，10-0位为A通道强度
                 value_to_write = combined_value.to_bytes(3, byteorder='little')  # 将24位值转换为3字节小端格式
                 await self.client.write_gatt_char(strength_CharacteristicId, value_to_write)
@@ -137,8 +137,8 @@ if __name__ == "__main__":
     longtail = DgLab("D-LAB ESTIM01")
     asyncio.run(longtail.run())
     # AB通道最大强度
-    longtail.ab_value_max = 25
+    longtail.ab_value_max = 20
     # 通道强度（高于最大时无效）
-    longtail.a_value = 20
-    longtail.b_value = 20
+    longtail.a_value = 15
+    longtail.b_value = 15
     main()
