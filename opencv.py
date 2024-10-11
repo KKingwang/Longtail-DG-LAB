@@ -16,9 +16,9 @@ prev_hp = None
 # 左上角坐标 (x, y)
 # 右下角坐标 (x, y)
 # 平均灰度值
-hp_region_top_left = (639, 373)
-hp_region_bottom_right = (1908, 1058)
-average_greyscale = 255
+hp_region_top_left = (489, 781)
+hp_region_bottom_right = (1716, 822)
+average_greyscale = 250
 
 try:
     while True:
@@ -46,7 +46,7 @@ try:
 
         # 判断血量是否变化（只会在血量减少时运行函数）
         # 没有加判断，可能会出奇奇怪怪的bug，比如打开背包之类的也会触发，后续做优化 -- 2024.10.11
-        if current_hp < prev_hp and abs(current_hp - prev_hp) > 50:  # 50 是一个阈值，可以根据需要调整
+        if current_hp < prev_hp and abs(current_hp - prev_hp) > 70:  # 50 是一个阈值，可以根据需要调整
             print("血量减少！")
             main()
 

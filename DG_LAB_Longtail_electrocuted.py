@@ -132,13 +132,13 @@ def main():
             asyncio.run(
                 longtail.send_data("B", send_pulse_params(*wave_data_tuple_a), send_pulse_params(*wave_data_tuple_b),
                                    power_data_tuple_ab))
-        elif channel == "on_all":
+        elif channel == "onab":
             print("开启通道 AB")
             print(f"AB 接收的频率元组值为: {wave_data_tuple_a}, {wave_data_tuple_b}")
             asyncio.run(
                 longtail.send_data("ALL", send_pulse_params(*wave_data_tuple_a), send_pulse_params(*wave_data_tuple_b),
                                    power_data_tuple_ab))
-        elif channel == "off":
+        elif channel == "off_":
             running = False
         else:
             print("Invalid command.")
