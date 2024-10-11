@@ -105,6 +105,10 @@ def main():
     running = True
     while running:
         data, addr = udp_socket.recvfrom(1024)  # 1024 是缓冲区大小，可以根据需要调整
+        if len(data) < 40:
+            data = data.ljust(40, b'\x00')  # 用零字节填充
+        elif len(data) > 40:
+            data = data[:40]  # 截断到40字节
         message_length = struct.unpack('!I', data[:4])[0]  # 解包字符串长度（第一个无符号整数）
         format_string = f'!I{message_length}s3i3i2i'  # 根据字符串长度，构建解包格式
         unpacked_data = struct.unpack(format_string, data)
