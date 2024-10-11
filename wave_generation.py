@@ -1,5 +1,4 @@
 import random
-
 from udp_update import create_wave_sequence
 
 
@@ -13,7 +12,7 @@ def for_frequency_update(frequency_list, z):
     for frequency in frequency_list:
         a = frequency_update(frequency, z)
         print(a)
-        create_wave_sequence("on_a", [a], [(0, 0, 0)])
+        create_wave_sequence("on_a", [a], [(0, 0, 0)], random_power)
 
 
 def main():
@@ -33,7 +32,8 @@ if __name__ == '__main__':
     # 固定列表
     # frequency_list_ = [23, 20, 15, 10, 5, 2, 111, 170, 186, 106, 119, 101]
     # 随机列表，范围 1-600，数量 100
-    random_numbers = [random.randint(1, 600) for _ in range(10)]
+    random_numbers = [random.randint(1, 600) for _ in range(1)]
+    random_power = (random.randint(1, 18), random.randint(1, 18))
 
     # 脉冲宽度 z
     frequency_z = 31
