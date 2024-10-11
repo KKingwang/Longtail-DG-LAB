@@ -1,1 +1,7 @@
-wheel @ file:///opt/homebrew/Cellar/python%403.12/3.12.5/libexec/wheel-0.44.0-py3-none-any.whl#sha256=8d8a590e50bda8422000110e90bc730ebfcd8363d2de80793ac819b7f252e97d
+bleak==0.22.3
+numpy==2.1.2
+opencv-python==4.10.0.84
+pyobjc-core==10.3.1
+pyobjc-framework-Cocoa==10.3.1
+pyobjc-framework-CoreBluetooth==10.3.1
+pyobjc-framework-libdispatch==10.3.1
