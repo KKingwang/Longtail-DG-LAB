@@ -18,12 +18,12 @@ machine.
 
 ## Functions / 功能
 
-1. Perform Electrocute action when receive specific UDP pack.
-2. Generate random waves to Electrocute.
+1. Perform Electrocute action when receive specific UDP pack.  
+2. Generate random waves to Electrocute.  
+<br>
 
-
-1. 接受到特定UDP包时发送电击脉冲。
-2. 随机生成电击波形。
+1. 接受到特定UDP包时发送电击脉冲。  
+2. 随机生成电击波形。  
 
 ## Special Thanks
 
